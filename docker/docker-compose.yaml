@@ -1,0 +1,16 @@
+services:
+  lighttpd:
+    image: sebp/lighttpd
+    volumes:
+      - /Users/anthonykwang/techtalks/techtalks/lighttpd/:/var/www/localhost/htdocs
+    ports:
+      - "4200:80"
+    # tty: true
+
+  gunicorn:
+    image: docker_gunicorn
+    # volumes:
+    #   - /Users/anthonykwang/techtalks/techtalks/gunicorn/:/code
+    ports:
+      - "8000:8000"
+    # tty: true
